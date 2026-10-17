@@ -100,7 +100,7 @@ func (this *Context) GetParams() Params {
 }
 
 /************ Render **************/
-func (this *Context) Render(data interface{}) {
+func (this *Context) Render(data any) {
 	h := gin.H{
 		"code": HttpStatusOk,
 		"data": data}

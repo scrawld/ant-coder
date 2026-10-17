@@ -5,7 +5,7 @@
 # Description:
 ####################################################################### */
 
-//go test -v -tags consul ./handlers -run TestGetByIds -pwd=`pwd` -registry=false
+// go test -v -tags consul ./handlers -run TestGetByIds -pwd=`pwd` -registry=false
 package handlers
 
 import (
@@ -100,7 +100,7 @@ func buildCommonHeader() *libs.Header {
 		Metadata:  map[string]string{}}
 }
 
-func Call(fn, req, resp interface{}) (err error) {
+func Call(fn, req, resp any) (err error) {
 	if *registry == true {
 		fname := runtime.FuncForPC(reflect.ValueOf(fn).Pointer()).Name()
 		re, _ := regexp.Compile(`\.(?P<fn>[\w]+)-fm$`)

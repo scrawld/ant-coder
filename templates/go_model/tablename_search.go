@@ -22,7 +22,7 @@ type __TABLE_NAME_CAMEL__Search struct {
 	query *__TABLE_NAME_CAMEL__Query
 }
 
-func (this *__TABLE_NAME_CAMEL__Search) Load(inp interface{}, excludes ...string) *__TABLE_NAME_CAMEL__Search {
+func (this *__TABLE_NAME_CAMEL__Search) Load(inp any, excludes ...string) *__TABLE_NAME_CAMEL__Search {
 	if err := util.Assign(inp, this, excludes...); err != nil {
 		fmt.Println(err)
 		return nil

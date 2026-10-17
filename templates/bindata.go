@@ -113,7 +113,7 @@ func (fi bindataFileInfo) ModTime() time.Time {
 func (fi bindataFileInfo) IsDir() bool {
 	return false
 }
-func (fi bindataFileInfo) Sys() interface{} {
+func (fi bindataFileInfo) Sys() any {
 	return nil
 }
 
@@ -1169,67 +1169,69 @@ func AssetNames() []string {
 
 // _bindata is a table, holding each asset generator, mapped to its name.
 var _bindata = map[string]func() (*asset, error){
-	"templates/bindata.go": templatesBindataGo,
-	"templates/go_crontab_worker/.gitignore": templatesGo_crontab_workerGitignore,
-	"templates/go_crontab_worker/conf/app.toml": templatesGo_crontab_workerConfAppToml,
-	"templates/go_crontab_worker/conf/log.xml": templatesGo_crontab_workerConfLogXml,
-	"templates/go_crontab_worker/control.sh": templatesGo_crontab_workerControlSh,
+	"templates/bindata.go":                                    templatesBindataGo,
+	"templates/go_crontab_worker/.gitignore":                  templatesGo_crontab_workerGitignore,
+	"templates/go_crontab_worker/conf/app.toml":               templatesGo_crontab_workerConfAppToml,
+	"templates/go_crontab_worker/conf/log.xml":                templatesGo_crontab_workerConfLogXml,
+	"templates/go_crontab_worker/control.sh":                  templatesGo_crontab_workerControlSh,
 	"templates/go_crontab_worker/handlers/default_handler.go": templatesGo_crontab_workerHandlersDefault_handlerGo,
-	"templates/go_crontab_worker/handlers/handlers.go": templatesGo_crontab_workerHandlersHandlersGo,
-	"templates/go_crontab_worker/libs/config/config.go": templatesGo_crontab_workerLibsConfigConfigGo,
-	"templates/go_crontab_worker/libs/types.go": templatesGo_crontab_workerLibsTypesGo,
-	"templates/go_crontab_worker/main.go": templatesGo_crontab_workerMainGo,
-	"templates/go_crontab_worker/models/models.go": templatesGo_crontab_workerModelsModelsGo,
-	"templates/go_loop_worker/.gitignore": templatesGo_loop_workerGitignore,
-	"templates/go_loop_worker/conf/app.toml": templatesGo_loop_workerConfAppToml,
-	"templates/go_loop_worker/conf/log.xml": templatesGo_loop_workerConfLogXml,
-	"templates/go_loop_worker/control.sh": templatesGo_loop_workerControlSh,
-	"templates/go_loop_worker/handlers/default_handler.go": templatesGo_loop_workerHandlersDefault_handlerGo,
-	"templates/go_loop_worker/handlers/handlers.go": templatesGo_loop_workerHandlersHandlersGo,
-	"templates/go_loop_worker/libs/config/config.go": templatesGo_loop_workerLibsConfigConfigGo,
-	"templates/go_loop_worker/libs/loops/loops.go": templatesGo_loop_workerLibsLoopsLoopsGo,
-	"templates/go_loop_worker/libs/types.go": templatesGo_loop_workerLibsTypesGo,
-	"templates/go_loop_worker/main.go": templatesGo_loop_workerMainGo,
-	"templates/go_loop_worker/models/models.go": templatesGo_loop_workerModelsModelsGo,
-	"templates/go_model/tablename.go": templatesGo_modelTablenameGo,
-	"templates/go_model/tablename_query.go": templatesGo_modelTablename_queryGo,
-	"templates/go_model/tablename_search.go": templatesGo_modelTablename_searchGo,
-	"templates/go_rpcx_server/.gitignore": templatesGo_rpcx_serverGitignore,
-	"templates/go_rpcx_server/conf/app.toml": templatesGo_rpcx_serverConfAppToml,
-	"templates/go_rpcx_server/conf/log.xml": templatesGo_rpcx_serverConfLogXml,
-	"templates/go_rpcx_server/control.sh": templatesGo_rpcx_serverControlSh,
-	"templates/go_rpcx_server/handlers/default_handler.go": templatesGo_rpcx_serverHandlersDefault_handlerGo,
-	"templates/go_rpcx_server/handlers/handlers.go": templatesGo_rpcx_serverHandlersHandlersGo,
-	"templates/go_rpcx_server/handlers/handlers_test.go": templatesGo_rpcx_serverHandlersHandlers_testGo,
-	"templates/go_rpcx_server/libs/config/config.go": templatesGo_rpcx_serverLibsConfigConfigGo,
-	"templates/go_rpcx_server/libs/types.go": templatesGo_rpcx_serverLibsTypesGo,
-	"templates/go_rpcx_server/main.go": templatesGo_rpcx_serverMainGo,
-	"templates/go_rpcx_server/models/models.go": templatesGo_rpcx_serverModelsModelsGo,
-	"templates/go_ui/.gitignore": templatesGo_uiGitignore,
-	"templates/go_ui/conf/app.toml": templatesGo_uiConfAppToml,
-	"templates/go_ui/conf/log.xml": templatesGo_uiConfLogXml,
-	"templates/go_ui/control.sh": templatesGo_uiControlSh,
-	"templates/go_ui/controllers/controllers.go": templatesGo_uiControllersControllersGo,
-	"templates/go_ui/controllers/site_controller.go": templatesGo_uiControllersSite_controllerGo,
-	"templates/go_ui/libs/config/config.go": templatesGo_uiLibsConfigConfigGo,
-	"templates/go_ui/libs/context.go": templatesGo_uiLibsContextGo,
-	"templates/go_ui/libs/enums.go": templatesGo_uiLibsEnumsGo,
-	"templates/go_ui/libs/middlewares/logger.go": templatesGo_uiLibsMiddlewaresLoggerGo,
-	"templates/go_ui/libs/types.go": templatesGo_uiLibsTypesGo,
-	"templates/go_ui/main.go": templatesGo_uiMainGo,
-	"templates/go_ui/models/models.go": templatesGo_uiModelsModelsGo,
-	"templates/go_ui/server.go": templatesGo_uiServerGo,
+	"templates/go_crontab_worker/handlers/handlers.go":        templatesGo_crontab_workerHandlersHandlersGo,
+	"templates/go_crontab_worker/libs/config/config.go":       templatesGo_crontab_workerLibsConfigConfigGo,
+	"templates/go_crontab_worker/libs/types.go":               templatesGo_crontab_workerLibsTypesGo,
+	"templates/go_crontab_worker/main.go":                     templatesGo_crontab_workerMainGo,
+	"templates/go_crontab_worker/models/models.go":            templatesGo_crontab_workerModelsModelsGo,
+	"templates/go_loop_worker/.gitignore":                     templatesGo_loop_workerGitignore,
+	"templates/go_loop_worker/conf/app.toml":                  templatesGo_loop_workerConfAppToml,
+	"templates/go_loop_worker/conf/log.xml":                   templatesGo_loop_workerConfLogXml,
+	"templates/go_loop_worker/control.sh":                     templatesGo_loop_workerControlSh,
+	"templates/go_loop_worker/handlers/default_handler.go":    templatesGo_loop_workerHandlersDefault_handlerGo,
+	"templates/go_loop_worker/handlers/handlers.go":           templatesGo_loop_workerHandlersHandlersGo,
+	"templates/go_loop_worker/libs/config/config.go":          templatesGo_loop_workerLibsConfigConfigGo,
+	"templates/go_loop_worker/libs/loops/loops.go":            templatesGo_loop_workerLibsLoopsLoopsGo,
+	"templates/go_loop_worker/libs/types.go":                  templatesGo_loop_workerLibsTypesGo,
+	"templates/go_loop_worker/main.go":                        templatesGo_loop_workerMainGo,
+	"templates/go_loop_worker/models/models.go":               templatesGo_loop_workerModelsModelsGo,
+	"templates/go_model/tablename.go":                         templatesGo_modelTablenameGo,
+	"templates/go_model/tablename_query.go":                   templatesGo_modelTablename_queryGo,
+	"templates/go_model/tablename_search.go":                  templatesGo_modelTablename_searchGo,
+	"templates/go_rpcx_server/.gitignore":                     templatesGo_rpcx_serverGitignore,
+	"templates/go_rpcx_server/conf/app.toml":                  templatesGo_rpcx_serverConfAppToml,
+	"templates/go_rpcx_server/conf/log.xml":                   templatesGo_rpcx_serverConfLogXml,
+	"templates/go_rpcx_server/control.sh":                     templatesGo_rpcx_serverControlSh,
+	"templates/go_rpcx_server/handlers/default_handler.go":    templatesGo_rpcx_serverHandlersDefault_handlerGo,
+	"templates/go_rpcx_server/handlers/handlers.go":           templatesGo_rpcx_serverHandlersHandlersGo,
+	"templates/go_rpcx_server/handlers/handlers_test.go":      templatesGo_rpcx_serverHandlersHandlers_testGo,
+	"templates/go_rpcx_server/libs/config/config.go":          templatesGo_rpcx_serverLibsConfigConfigGo,
+	"templates/go_rpcx_server/libs/types.go":                  templatesGo_rpcx_serverLibsTypesGo,
+	"templates/go_rpcx_server/main.go":                        templatesGo_rpcx_serverMainGo,
+	"templates/go_rpcx_server/models/models.go":               templatesGo_rpcx_serverModelsModelsGo,
+	"templates/go_ui/.gitignore":                              templatesGo_uiGitignore,
+	"templates/go_ui/conf/app.toml":                           templatesGo_uiConfAppToml,
+	"templates/go_ui/conf/log.xml":                            templatesGo_uiConfLogXml,
+	"templates/go_ui/control.sh":                              templatesGo_uiControlSh,
+	"templates/go_ui/controllers/controllers.go":              templatesGo_uiControllersControllersGo,
+	"templates/go_ui/controllers/site_controller.go":          templatesGo_uiControllersSite_controllerGo,
+	"templates/go_ui/libs/config/config.go":                   templatesGo_uiLibsConfigConfigGo,
+	"templates/go_ui/libs/context.go":                         templatesGo_uiLibsContextGo,
+	"templates/go_ui/libs/enums.go":                           templatesGo_uiLibsEnumsGo,
+	"templates/go_ui/libs/middlewares/logger.go":              templatesGo_uiLibsMiddlewaresLoggerGo,
+	"templates/go_ui/libs/types.go":                           templatesGo_uiLibsTypesGo,
+	"templates/go_ui/main.go":                                 templatesGo_uiMainGo,
+	"templates/go_ui/models/models.go":                        templatesGo_uiModelsModelsGo,
+	"templates/go_ui/server.go":                               templatesGo_uiServerGo,
 }
 
 // AssetDir returns the file names below a certain
 // directory embedded in the file by go-bindata.
 // For example if you run go-bindata on data/... and data contains the
 // following hierarchy:
-//     data/
-//       foo.txt
-//       img/
-//         a.png
-//         b.png
+//
+//	data/
+//	  foo.txt
+//	  img/
+//	    a.png
+//	    b.png
+//
 // then AssetDir("data") would return []string{"foo.txt", "img"}
 // AssetDir("data/img") would return []string{"a.png", "b.png"}
 // AssetDir("foo.txt") and AssetDir("notexist") would return an error
@@ -1260,6 +1262,7 @@ type bintree struct {
 	Func     func() (*asset, error)
 	Children map[string]*bintree
 }
+
 var _bintree = &bintree{nil, map[string]*bintree{
 	"templates": &bintree{nil, map[string]*bintree{
 		"bindata.go": &bintree{templatesBindataGo, map[string]*bintree{}},
@@ -1267,12 +1270,12 @@ var _bintree = &bintree{nil, map[string]*bintree{
 			".gitignore": &bintree{templatesGo_crontab_workerGitignore, map[string]*bintree{}},
 			"conf": &bintree{nil, map[string]*bintree{
 				"app.toml": &bintree{templatesGo_crontab_workerConfAppToml, map[string]*bintree{}},
-				"log.xml": &bintree{templatesGo_crontab_workerConfLogXml, map[string]*bintree{}},
+				"log.xml":  &bintree{templatesGo_crontab_workerConfLogXml, map[string]*bintree{}},
 			}},
 			"control.sh": &bintree{templatesGo_crontab_workerControlSh, map[string]*bintree{}},
 			"handlers": &bintree{nil, map[string]*bintree{
 				"default_handler.go": &bintree{templatesGo_crontab_workerHandlersDefault_handlerGo, map[string]*bintree{}},
-				"handlers.go": &bintree{templatesGo_crontab_workerHandlersHandlersGo, map[string]*bintree{}},
+				"handlers.go":        &bintree{templatesGo_crontab_workerHandlersHandlersGo, map[string]*bintree{}},
 			}},
 			"libs": &bintree{nil, map[string]*bintree{
 				"config": &bintree{nil, map[string]*bintree{
@@ -1289,12 +1292,12 @@ var _bintree = &bintree{nil, map[string]*bintree{
 			".gitignore": &bintree{templatesGo_loop_workerGitignore, map[string]*bintree{}},
 			"conf": &bintree{nil, map[string]*bintree{
 				"app.toml": &bintree{templatesGo_loop_workerConfAppToml, map[string]*bintree{}},
-				"log.xml": &bintree{templatesGo_loop_workerConfLogXml, map[string]*bintree{}},
+				"log.xml":  &bintree{templatesGo_loop_workerConfLogXml, map[string]*bintree{}},
 			}},
 			"control.sh": &bintree{templatesGo_loop_workerControlSh, map[string]*bintree{}},
 			"handlers": &bintree{nil, map[string]*bintree{
 				"default_handler.go": &bintree{templatesGo_loop_workerHandlersDefault_handlerGo, map[string]*bintree{}},
-				"handlers.go": &bintree{templatesGo_loop_workerHandlersHandlersGo, map[string]*bintree{}},
+				"handlers.go":        &bintree{templatesGo_loop_workerHandlersHandlersGo, map[string]*bintree{}},
 			}},
 			"libs": &bintree{nil, map[string]*bintree{
 				"config": &bintree{nil, map[string]*bintree{
@@ -1311,21 +1314,21 @@ var _bintree = &bintree{nil, map[string]*bintree{
 			}},
 		}},
 		"go_model": &bintree{nil, map[string]*bintree{
-			"tablename.go": &bintree{templatesGo_modelTablenameGo, map[string]*bintree{}},
-			"tablename_query.go": &bintree{templatesGo_modelTablename_queryGo, map[string]*bintree{}},
+			"tablename.go":        &bintree{templatesGo_modelTablenameGo, map[string]*bintree{}},
+			"tablename_query.go":  &bintree{templatesGo_modelTablename_queryGo, map[string]*bintree{}},
 			"tablename_search.go": &bintree{templatesGo_modelTablename_searchGo, map[string]*bintree{}},
 		}},
 		"go_rpcx_server": &bintree{nil, map[string]*bintree{
 			".gitignore": &bintree{templatesGo_rpcx_serverGitignore, map[string]*bintree{}},
 			"conf": &bintree{nil, map[string]*bintree{
 				"app.toml": &bintree{templatesGo_rpcx_serverConfAppToml, map[string]*bintree{}},
-				"log.xml": &bintree{templatesGo_rpcx_serverConfLogXml, map[string]*bintree{}},
+				"log.xml":  &bintree{templatesGo_rpcx_serverConfLogXml, map[string]*bintree{}},
 			}},
 			"control.sh": &bintree{templatesGo_rpcx_serverControlSh, map[string]*bintree{}},
 			"handlers": &bintree{nil, map[string]*bintree{
 				"default_handler.go": &bintree{templatesGo_rpcx_serverHandlersDefault_handlerGo, map[string]*bintree{}},
-				"handlers.go": &bintree{templatesGo_rpcx_serverHandlersHandlersGo, map[string]*bintree{}},
-				"handlers_test.go": &bintree{templatesGo_rpcx_serverHandlersHandlers_testGo, map[string]*bintree{}},
+				"handlers.go":        &bintree{templatesGo_rpcx_serverHandlersHandlersGo, map[string]*bintree{}},
+				"handlers_test.go":   &bintree{templatesGo_rpcx_serverHandlersHandlers_testGo, map[string]*bintree{}},
 			}},
 			"libs": &bintree{nil, map[string]*bintree{
 				"config": &bintree{nil, map[string]*bintree{
@@ -1342,11 +1345,11 @@ var _bintree = &bintree{nil, map[string]*bintree{
 			".gitignore": &bintree{templatesGo_uiGitignore, map[string]*bintree{}},
 			"conf": &bintree{nil, map[string]*bintree{
 				"app.toml": &bintree{templatesGo_uiConfAppToml, map[string]*bintree{}},
-				"log.xml": &bintree{templatesGo_uiConfLogXml, map[string]*bintree{}},
+				"log.xml":  &bintree{templatesGo_uiConfLogXml, map[string]*bintree{}},
 			}},
 			"control.sh": &bintree{templatesGo_uiControlSh, map[string]*bintree{}},
 			"controllers": &bintree{nil, map[string]*bintree{
-				"controllers.go": &bintree{templatesGo_uiControllersControllersGo, map[string]*bintree{}},
+				"controllers.go":     &bintree{templatesGo_uiControllersControllersGo, map[string]*bintree{}},
 				"site_controller.go": &bintree{templatesGo_uiControllersSite_controllerGo, map[string]*bintree{}},
 			}},
 			"libs": &bintree{nil, map[string]*bintree{
@@ -1354,7 +1357,7 @@ var _bintree = &bintree{nil, map[string]*bintree{
 					"config.go": &bintree{templatesGo_uiLibsConfigConfigGo, map[string]*bintree{}},
 				}},
 				"context.go": &bintree{templatesGo_uiLibsContextGo, map[string]*bintree{}},
-				"enums.go": &bintree{templatesGo_uiLibsEnumsGo, map[string]*bintree{}},
+				"enums.go":   &bintree{templatesGo_uiLibsEnumsGo, map[string]*bintree{}},
 				"middlewares": &bintree{nil, map[string]*bintree{
 					"logger.go": &bintree{templatesGo_uiLibsMiddlewaresLoggerGo, map[string]*bintree{}},
 				}},
@@ -1415,4 +1418,3 @@ func _filePath(dir, name string) string {
 	cannonicalName := strings.Replace(name, "\\", "/", -1)
 	return filepath.Join(append([]string{dir}, strings.Split(cannonicalName, "/")...)...)
 }
-

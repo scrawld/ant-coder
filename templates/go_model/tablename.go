@@ -82,7 +82,7 @@ func (this *__TABLE_NAME_CAMEL__) TableName() string {
 	return "__TABLE_NAME__"
 }
 
-func (this *__TABLE_NAME_CAMEL__) Load(inp interface{}, excludes ...string) *__TABLE_NAME_CAMEL__ {
+func (this *__TABLE_NAME_CAMEL__) Load(inp any, excludes ...string) *__TABLE_NAME_CAMEL__ {
 	if err := util.Assign(inp, this, excludes...); err != nil {
 		fmt.Println(err)
 		return nil
